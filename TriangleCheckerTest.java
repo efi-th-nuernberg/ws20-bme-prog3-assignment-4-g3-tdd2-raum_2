@@ -7,7 +7,7 @@ public class TriangleCheckerTest {
     public void testNormalTriangle() {
 
         // Arrange
-        float a = 2;
+        float a = 5;
         float b = 3;
         float c = 4;
 
@@ -35,7 +35,7 @@ public class TriangleCheckerTest {
 
     }
 
-        @Test
+    @Test
     public void testEquilateralTriangle() {
 
         // Arrange
@@ -48,6 +48,38 @@ public class TriangleCheckerTest {
 
         // Assert
         assertEquals(TriangleChecker.TriangleType.EQUILATERAL, type);
+
+    }
+
+    @Test
+    public void testNoneTriangle() {
+
+        // Arrange
+        float a = 10;
+        float b = 1;
+        float c = 1;
+
+        // Act
+        TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
+
+        // Assert
+        assertEquals(TriangleChecker.TriangleType.NONE, type);
+
+    }
+
+    @Test
+    public void testNegativeTriangle() {
+
+        // Arrange
+        float a = -10;
+        float b = 5;
+        float c = -5;
+
+        // Act
+        TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
+
+        // Assert
+        assertEquals(TriangleChecker.TriangleType.NONE, type);
 
     }
 
