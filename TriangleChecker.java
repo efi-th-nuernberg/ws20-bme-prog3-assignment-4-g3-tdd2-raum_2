@@ -66,7 +66,7 @@ public class TriangleChecker {
   }
   
   public static boolean checkForNormal(float a, float b, float c){
-    if((a > 0 || b > 0 || c > 0)&&
+    if((a > 0 && b > 0 && c > 0) &&
        (c <= a+b && b <= a+c && a <= c+b)
       ) return true;
     return false;
